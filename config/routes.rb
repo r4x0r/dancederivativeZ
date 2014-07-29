@@ -54,5 +54,5 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-root 'onepage#new'  
+root 'one_page#index'  
 end

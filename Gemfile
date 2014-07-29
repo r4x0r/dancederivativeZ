@@ -3,14 +3,25 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
+
 # Use sqlite3 as the database for Active Record
-# group :development, :test do
-#   gem 'sqlite3'
-# end
+group :development do
+  gem 'sqlite3', '1.3.8'
+  #replace the default rails errors
+  gem "better_errors"
+  gem "binding_of_caller"
+  # Quiet Assets turns off the Rails asset pipeline log. This means that it suppresses messages in your development log
+  gem 'quiet_assets'
+end
+
 #Production to use with heroku
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
 end
+
+# To use slim
+gem 'slim-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
