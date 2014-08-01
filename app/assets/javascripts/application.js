@@ -13,7 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require init
-//= require jquery.poptrox.min
-//= require skel.min
+//= require bootstrap-sprockets
+//= require classie
+//= require cbpAnimatedHeader
+//= require contact_me
+//= require jqBootstrapValidation
 //= require_tree .

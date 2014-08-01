@@ -20,6 +20,10 @@ group :production do
   gem 'rails_12factor'
 end
 
+# For Bootstrap
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
+
 # To use slim
 gem 'slim-rails'
 # Use SCSS for stylesheets
