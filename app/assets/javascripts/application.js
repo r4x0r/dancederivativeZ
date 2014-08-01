@@ -16,6 +16,6 @@
 //= require bootstrap-sprockets
 //= require classie
 //= require cbpAnimatedHeader
-//= require contact_me
 //= require jqBootstrapValidation
+//= require contact_me
 //= require_tree .
