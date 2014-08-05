@@ -14,10 +14,10 @@ body
   color: #fed136
 
 p
-  font-size: 14px
+  font-size: 16px
   line-height: 1.75
   &.large
-    font-size: 16px
+    font-size: 18px
 
 a
   outline: 0
@@ -190,9 +190,13 @@ fieldset[disabled] .btn-xl.active
   color: #fed136
   background-color: #fff
 
+.colouroverlay
+  background-color: rgba(255,255,255,0.5)
+  padding: 20px
+
 .navbar-default
   border-color: transparent
-  background-color: #222
+  background-color: transparent
   .navbar-brand
     font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive
     color: #fed136
@@ -275,36 +279,55 @@ header
 
 @media (min-width: 768px)
   header .intro-text
-    padding-top: 300px
-    padding-bottom: 200px
+    padding-top: 100px
+    padding-bottom: 50px
     .intro-lead-in
       margin-bottom: 25px
       font-size: 40px
       font-style: italic
       line-height: 40px
     .intro-heading
-      margin-bottom: 50px
+      margin-bottom: 80px
       font-size: 55px
       font-weight: 700
       line-height: 75px
 
 section
   padding: 100px 0
+  
+
   h2.section-heading
     margin-top: 0
     margin-bottom: 15px
     font-size: 40px
   h3.section-subheading
-    margin-bottom: 75px
+    margin-bottom: 25px
     text-transform: none
     font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif
     font-size: 16px
     font-style: italic
     font-weight: 400
 
+
+
 @media (min-width: 768px)
   section
-    padding: 150px 0
+    padding: 120px 30px
+
+#whoweare
+  background-image: url(/assets/background_1.jpg)
+  background-position: center center
+  background-repeat: none
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  background-size: cover
+  -o-background-size: cover
+
+  p
+    font-size: 20px
+#whatwedo
+  h2
+    padding-bottom: 40px
 
 .service-heading
   margin: 15px 0
