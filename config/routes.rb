@@ -54,5 +54,8 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-root 'one_page#index'  
+root 'one_page#index'
+
+resources "contacts", only: [:create]
+
 end

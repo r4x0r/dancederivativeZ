@@ -14,16 +14,20 @@ group :development do
   gem 'quiet_assets'
 end
 
+
 #Production to use with heroku
 group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
 
+
 # For Bootstrap
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
+
+# SASS, SLIM, COFFEE
 # To use slim
 gem 'slim-rails'
 # Use SCSS for stylesheets
@@ -35,6 +39,9 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
+
+
+# Required Rails Default Gems
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -44,7 +51,18 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
+
+
+# For awesome icon
 gem "font-awesome-rails"
+
+
+
+# For the troublesome contact us
+# mail form for tableless form
+gem "mail_form"
+
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
