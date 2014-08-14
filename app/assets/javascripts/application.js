@@ -18,6 +18,8 @@
 //= require cbpAnimatedHeader
 //= require jqBootstrapValidation
 //= require contact_me
-//= require jquery.backstretch
+//= require jquery.easings.min
+//= require jquery.slimscroll.min
+//= require jquery.fullPage
 //= require_tree .
   
