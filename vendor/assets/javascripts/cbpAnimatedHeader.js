@@ -16,6 +16,7 @@ var cbpAnimatedHeader = (function() {
 		changeHeaderOn = 300;
 
 	function init() {
+		console.log('initialize animated header');
 		window.addEventListener( 'scroll', function( event ) {
 			if( !didScroll ) {
 				didScroll = true;
@@ -25,6 +26,7 @@ var cbpAnimatedHeader = (function() {
 	}
 
 	function scrollPage() {
+		console.log('scroll page');
 		var sy = scrollY();
 		if ( sy >= changeHeaderOn ) {
 			classie.add( header, 'navbar-shrink' );
@@ -36,6 +38,7 @@ var cbpAnimatedHeader = (function() {
 	}
 
 	function scrollY() {
+		console.log('scroll y');
 		return window.pageYOffset || docElem.scrollTop;
 	}
 

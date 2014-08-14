@@ -6,52 +6,79 @@
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
-    // $('a.page-scroll').bind('click', function(event) {
-    //     var $anchor = $(this);
-    //     $('html, body').stop().animate({
-    //         scrollTop: $($anchor.attr('href')).offset().top
-    //     }, 1500, 'easeInOutExpo');
-    //     event.preventDefault();
-    // });
+  // $('a.page-scroll').bind('click', function(event) {
+  //     var $anchor = $(this);
+  //     $('html, body').stop().animate({
+  //         scrollTop: $($anchor.attr('href')).offset().top
+  //     }, 1500, 'easeInOutExpo');
+  //     event.preventDefault();
+  // });
 
-    $('#fullpage').fullpage({
-        verticalCentered: true,
-        resize : true,
-        // sectionsColor : ['#ccc', '#fff'],
-        anchors:['home', 'whoweare', 'whatwedo', 'instructor', 'events' , 'contact'],
-        scrollingSpeed: 1000,
-        easing: 'easeInOutExpo',
-        menu: '#menu',
-        navigation: false,
-        // navigationPosition: 'right',
-        // navigationTooltips: ['firstSlide', 'secondSlide'],
-        // slidesNavigation: true,
-        // slidesNavPosition: 'bottom',
-        loopBottom: false,
-        loopTop: false,
-        loopHorizontal: true,
-        autoScrolling: true,
-        scrollOverflow: false,
-        css3: false,
-        paddingTop: '1em',
-        paddingBottom: 0,
-        normalScrollElements: '#element1, .element2',
-        normalScrollElementTouchThreshold: 5,
-        keyboardScrolling: true,
-        touchSensitivity: 15,
-        continuousVertical: false,
-        animateAnchor: true,
-        sectionSelector: '.section',
-        slideSelector: '.slide',
+  $('#fullpage').fullpage(
+  {
+      verticalCentered: false,
+      resize : true,
+      // sectionsColor : ['#ccc', '#fff'],
+      anchors:['home', 'whoweare', 'whatwedo', 'instructor', 'events' , 'contact'],
+      scrollingSpeed: 1500,
+      easing: 'easeOutExpo',
+      menu: '#menu',
+      // navigation: false,
+      // navigationPosition: 'right',
+      // navigationTooltips: ['firstSlide', 'secondSlide'],
+      // slidesNavigation: true,
+      // slidesNavPosition: 'bottom',
+      loopBottom: false,
+      loopTop: false,
+      loopHorizontal: true,
+      autoScrolling: true,
+      scrollOverflow: false,
+      css3: false,
+      paddingTop: '5em',
+      paddingBottom: 0,
+      // normalScrollElements: '#element1, .element2',
+      // normalScrollElementTouchThreshold: 5,
+      keyboardScrolling: true,
+      touchSensitivity: 15,
+      continuousVertical: false,
+      animateAnchor: true,
+      sectionSelector: 'section',
+      // slideSelector: '.slide',
 
-        // //events
-        // onLeave: function(index, nextIndex, direction){},
-        // afterLoad: function(anchorLink, index){},
-        // afterRender: function(){},
-        // afterResize: function(){},
-        // afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
-        // onSlideLeave: function(anchorLink, index, slideIndex, direction){}
-    });
+      // //events
+      // onLeave: function(index, nextIndex, direction){},
+      // afterLoad: function(anchorLink, index){},
+      // afterRender: function(){},
+      // afterResize: function(){},
+      // afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
+      // onSlideLeave: function(anchorLink, index, slideIndex, direction){}
+
+
+      //events
+      onLeave: function(index, nextIndex, direction)
+      {
+        //initialise header variable
+        header = document.querySelector( '.navbar-default' );
+        
+        //after leaving section header, put in a class of navbar shrink
+        if(index == '1' && direction =='down'){
+          
+          classie.add(header, 'navbar-shrink');
+            
+        }
+
+        //if going back to section header, remove navbar shrink class
+        else if(index != '1' && nextIndex == '1'){
+            classie.remove(header, 'navbar-shrink');
+        }
+      }
+
+              //using anchorLink
+              // if(anchorLink == 'secondSlide'){
+              //     alert("Section 2 ended loading");
+              // }
+          
+  });
 });
 
 
