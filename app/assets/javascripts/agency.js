@@ -19,3 +19,10 @@ $(function() {
 $('body').scrollspy({
     target: '.navbar-fixed-top'
 })
+
+
+
+// trying out the backstrech feature
+$(function(){
+    $('header').backstretch("assets/background.jpg");
+    });
