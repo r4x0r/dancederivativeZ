@@ -22,7 +22,3 @@ $('body').scrollspy({
 
 
 
-// trying out the backstrech feature
-$(function(){
-    $('header').backstretch("assets/background.jpg");
-    });
