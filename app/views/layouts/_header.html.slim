@@ -11,18 +11,18 @@ nav.navbar.navbar-default.navbar-fixed-top
       a.navbar-brand.page-scroll href="#page-top"  Dance DerivativeZ
     /! Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
-      ul.nav.navbar-nav.navbar-right
-        li.hidden
-          a href="#page-top" 
-        li
+      ul.nav.navbar-nav.navbar-right#menu
+        li.hidden data-menuanchor="home"
+          a href="#home" 
+        li data-menuanchor="whoweare"
           a.page-scroll href="#whoweare"  Who We Are
-        li
+        li data-menuanchor="whatwedo"
           a.page-scroll href="#whatwedo" What We Do
-        li
+        li data-menuanchor="instructor"
           a.page-scroll href="#instructor"  Choreographer
-        li
+        li data-menuanchor="events"
           a.page-scroll href="#events"  Events
-        li
+        li data-menuanchor="contact"
           a.page-scroll href="#contact"  Contact
     /! /.navbar-collapse
   /! /.container-fluid
