@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140815103547) do
+ActiveRecord::Schema.define(version: 20140815110730) do
 
   create_table "events", force: true do |t|
     t.string   "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140815103547) do
     t.float    "cost"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "over"
   end
 
 end
