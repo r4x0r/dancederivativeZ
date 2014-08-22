@@ -56,6 +56,15 @@ $(function() {
 
 
       //events
+      afterLoad: function(anchorLink, index)
+      {
+        if (index == 1)
+        {
+          verticalCentered = true;
+          alert ("haha");
+        }
+      },
+
       onLeave: function(index, nextIndex, direction)
       {
         //initialise header variable
@@ -73,6 +82,7 @@ $(function() {
             classie.remove(header, 'navbar-shrink');
         }
       }
+
 
               //using anchorLink
               // if(anchorLink == 'secondSlide'){
