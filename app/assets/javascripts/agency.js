@@ -56,15 +56,6 @@ $(function() {
 
 
       //events
-      afterLoad: function(anchorLink, index)
-      {
-        if (index == 1)
-        {
-          verticalCentered = true;
-          alert ("haha");
-        }
-      },
-
       onLeave: function(index, nextIndex, direction)
       {
         //initialise header variable
