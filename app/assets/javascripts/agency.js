@@ -13,14 +13,15 @@ $(function() {
   //     }, 1500, 'easeInOutExpo');
   //     event.preventDefault();
   // });
-
-  $('#fullpage').fullpage(
+  if(!($(window).width() < 560))
   {
+    $('#fullpage').fullpage(
+    {
       verticalCentered: false,
       resize : true,
       // sectionsColor : ['#ccc', '#fff'],
       anchors:['home', 'whoweare', 'whatwedo', 'instructor', 'events' , 'contact'],
-      scrollingSpeed: 1500,
+      scrollingSpeed: 1000,
       easing: 'easeOutExpo',
       menu: '#menu',
       // navigation: false,
@@ -34,7 +35,7 @@ $(function() {
       autoScrolling: true,
       scrollOverflow: false,
       css3: false,
-      paddingTop: '5em',
+      paddingTop: '8em',
       paddingBottom: 0,
       // normalScrollElements: '#element1, .element2',
       // normalScrollElementTouchThreshold: 5,
@@ -59,12 +60,12 @@ $(function() {
       {
         //initialise header variable
         header = document.querySelector( '.navbar-default' );
-        
+
         //after leaving section header, put in a class of navbar shrink
         if(index == '1' && direction =='down'){
-          
+
           classie.add(header, 'navbar-shrink');
-            
+
         }
 
         //if going back to section header, remove navbar shrink class
@@ -77,15 +78,34 @@ $(function() {
               // if(anchorLink == 'secondSlide'){
               //     alert("Section 2 ended loading");
               // }
-          
-  });
+
+    });
+  }
+  // $(window).resize(function()
+  // {
+  //   var viewwidth = $(window).width()
+  //   {
+  //     if (viewwidth < 560)
+  //     {
+  //       //destroy any plugin event and any plugin modification done over your original HTML markup.
+  //       console.log('oh hi there');
+  //       $.fn.fullpage.destroy('all');
+  //     }
+  //     else
+  //     {
+  //       console.log('oh no there');
+  //       $.fn.fullpage.reBuild();
+  //     }
+  //   }
+  // })
+
 });
 
 
 // Highlight the top nav as scrolling occurs
 $('body').scrollspy({
     target: '.navbar-fixed-top'
-})
+});
 
 
 

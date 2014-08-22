@@ -15,11 +15,9 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require classie
-//= require cbpAnimatedHeader
 //= require jqBootstrapValidation
 //= require contact_me
 //= require jquery.easings.min
 //= require jquery.slimscroll.min
 //= require jquery.fullPage
 //= require_tree .
-  
