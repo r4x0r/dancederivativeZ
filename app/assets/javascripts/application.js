@@ -16,6 +16,8 @@
 //= require bootstrap-sprockets
 //= require classie
 //= require jqBootstrapValidation
+//= require velocity
+//= require velocity.ui
 //= require contact_me
 //= require jquery.easings.min
 //= require jquery.slimscroll.min

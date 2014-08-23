@@ -70,35 +70,59 @@ $(function() {
 
         //if going back to section header, remove navbar shrink class
         else if(index != '1' && nextIndex == '1'){
-            classie.remove(header, 'navbar-shrink');
+          classie.remove(header, 'navbar-shrink');
         }
+
+        // else if (index == '2')
+        // {
+        //   $('#section0 .hideme').css('display','none');
+        // }
+      },
+
+      afterRender: function()
+      {
+        //After rendering all the page, animate in the logo//
+        $('.center').delay(500).velocity('transition.slideDownIn', {stagger: 100, drag:true});
+      },
+
+      afterLoad: function(anchorLink, index)
+      {
+        //Who we are section
+        if(index == '2' && $('#section0').find('.hideme').is(':hidden'))
+        {
+          $('#section0').find('.hideme').velocity('transition.bounceRightIn');
+        }
+
+        //What we do section
+        if(index == '3' && $('#section1').find('.hideme').is(':hidden'))
+        {
+          $('#section1').find('.hideme').velocity('transition.slideDownIn', {stagger: 200, drag: true});
+        }
+
+        //Choreographer section
+        if(index == '4' && $('#section2').find('.hideme').is(':hidden'))
+        {
+          $('#section2').find('.hideme').velocity('transition.bounceLeftIn');
+        }
+
+        //Events section
+        if(index == '5' && $('#section3').find('.hideme').is(':hidden'))
+        {
+          $('#section3').find('.hideme').velocity('transition.slideUpBigIn', {stagger: 100, drag: true});
+        }
+
       }
-
-
-              //using anchorLink
-              // if(anchorLink == 'secondSlide'){
-              //     alert("Section 2 ended loading");
-              // }
 
     });
   }
-  // $(window).resize(function()
-  // {
-  //   var viewwidth = $(window).width()
-  //   {
-  //     if (viewwidth < 560)
-  //     {
-  //       //destroy any plugin event and any plugin modification done over your original HTML markup.
-  //       console.log('oh hi there');
-  //       $.fn.fullpage.destroy('all');
-  //     }
-  //     else
-  //     {
-  //       console.log('oh no there');
-  //       $.fn.fullpage.reBuild();
-  //     }
-  //   }
-  // })
+
+
+
+
+  //------------------------------------------------------------------------------------------------//
+  //                          Using Velocity For Animations                                         //
+  //------------------------------------------------------------------------------------------------//
+
 
 });
 
