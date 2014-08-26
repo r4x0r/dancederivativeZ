@@ -77,9 +77,19 @@ section#section3.bg-light-gray
   .container
     .row
       .col-lg-8
-        p.text-muted.hideme Coming Soon!
+        .vheight
+          = render partial: 'events/upcoming', local: { upcoming_events: Event.upcoming }
       .col-lg-4
         h2.section-heading.hideme Upcoming Events
+
+    .row
+      .col-lg-4
+        h2.section-heading.hideme Past Events
+
+      .col-lg-8
+        .vheight
+          = render 'events/past', past_events: Event.past
+
 
 
 /! Contact Us Section

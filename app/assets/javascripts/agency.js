@@ -4,17 +4,21 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-// jQuery for page scrolling feature - requires jQuery Easing plugin
+
 $(function() {
-  // $('a.page-scroll').bind('click', function(event) {
-  //     var $anchor = $(this);
-  //     $('html, body').stop().animate({
-  //         scrollTop: $($anchor.attr('href')).offset().top
-  //     }, 1500, 'easeInOutExpo');
-  //     event.preventDefault();
-  // });
+
   if(!($(window).width() < 560))
   {
+    //----------------------------------------------------------------------------------------------//
+    //                          Setting the Variables (caching)                                     //
+    //----------------------------------------------------------------------------------------------//
+
+    section0 = $('#section0');
+    section1 = $('#section1');
+    section2 = $('#section2');
+    section3 = $('#section3');
+    section4 = $('#section4');
+
     $('#fullpage').fullpage(
     {
       verticalCentered: false,
@@ -72,11 +76,6 @@ $(function() {
         else if(index != '1' && nextIndex == '1'){
           classie.remove(header, 'navbar-shrink');
         }
-
-        // else if (index == '2')
-        // {
-        //   $('#section0 .hideme').css('display','none');
-        // }
       },
 
       afterRender: function()
@@ -87,28 +86,32 @@ $(function() {
 
       afterLoad: function(anchorLink, index)
       {
+        //----------------------------------------------------------------------------------------------//
+        //                          Using Velocity For Animations                                       //
+        //----------------------------------------------------------------------------------------------//
+
         //Who we are section
-        if(index == '2' && $('#section0').find('.hideme').is(':hidden'))
+        if(index == '2' && section0.find('.hideme').is(':hidden'))
         {
-          $('#section0').find('.hideme').velocity('transition.bounceRightIn');
+          section0.find('.hideme').velocity('transition.bounceRightIn');
         }
 
         //What we do section
-        if(index == '3' && $('#section1').find('.hideme').is(':hidden'))
+        if(index == '3' && section1.find('.hideme').is(':hidden'))
         {
-          $('#section1').find('.hideme').velocity('transition.slideDownIn', {stagger: 200, drag: true});
+          section1.find('.hideme').velocity('transition.slideDownIn', {stagger: 200, drag: true});
         }
 
         //Choreographer section
-        if(index == '4' && $('#section2').find('.hideme').is(':hidden'))
+        if(index == '4' && section2.find('.hideme').is(':hidden'))
         {
-          $('#section2').find('.hideme').velocity('transition.bounceLeftIn');
+          section2.find('.hideme').velocity('transition.bounceLeftIn');
         }
 
         //Events section
-        if(index == '5' && $('#section3').find('.hideme').is(':hidden'))
+        if(index == '5' && section3.find('.hideme').is(':hidden'))
         {
-          $('#section3').find('.hideme').velocity('transition.slideUpBigIn', {stagger: 100, drag: true});
+          section3.find('.hideme').velocity('transition.slideUpBigIn', {stagger: 100, drag: true});
         }
 
       }
@@ -119,9 +122,7 @@ $(function() {
 
 
 
-  //------------------------------------------------------------------------------------------------//
-  //                          Using Velocity For Animations                                         //
-  //------------------------------------------------------------------------------------------------//
+
 
 
 });
@@ -134,3 +135,11 @@ $('body').scrollspy({
 
 
 
+// jQuery for page scrolling feature - requires jQuery Easing plugin
+  // $('a.page-scroll').bind('click', function(event) {
+  //     var $anchor = $(this);
+  //     $('html, body').stop().animate({
+  //         scrollTop: $($anchor.attr('href')).offset().top
+  //     }, 1500, 'easeInOutExpo');
+  //     event.preventDefault();
+  // });

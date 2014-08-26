@@ -6,7 +6,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string            :description
       t.string            :venue
       t.datetime          :date
-      t.float            :cost
+      t.float             :cost
 
       t.timestamps
     end
