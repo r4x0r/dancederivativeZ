@@ -88,7 +88,7 @@ section#section3.bg-light-gray
 
       .col-lg-8
         .vheight
-          = render 'events/past', past_events: Event.past
+          = render partial: 'events/past', local: { past_events: Event.past }
 
 
 
