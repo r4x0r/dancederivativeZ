@@ -77,8 +77,8 @@ section#section3.bg-light-gray
   .container
     .row
       .col-lg-8
-        .vheight
-          = render partial: 'events/upcoming', local: { upcoming_events: Event.upcoming }
+        .vheight.hideme
+          = render partial: 'events/upcoming', locals:  {upcoming_events: Events.upcoming }
       .col-lg-4
         h2.section-heading.hideme Upcoming Events
 
@@ -87,8 +87,8 @@ section#section3.bg-light-gray
         h2.section-heading.hideme Past Events
 
       .col-lg-8
-        .vheight
-          = render partial: 'events/past', local: { past_events: Event.past }
+        .vheight.hideme
+          = render partial: 'events/past', locals: { past_events: Events.past }
 
 
 
