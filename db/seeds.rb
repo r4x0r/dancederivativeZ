@@ -21,7 +21,7 @@ Events.create(
     {
       name: "blablabla",
       venue: "AsdfdsfBsdfr",
-      date: Date.parse("5th May 2015"),
+      date: Date.parse("6th May 2015"),
       cost: 20.00,
       time: "7pm"
     },
@@ -35,14 +35,14 @@ Events.create(
     {
       name: "blabl234abwela",
       venue: "AsdfdsfBsdfr",
-      date: Date.parse("5th May 2015"),
+      date: Date.parse("5th May 2018"),
       cost: 20.00,
       time: "7pm"
     },
     {
       name: "blabl234abla",
       venue: "AsdfdsfBsdfr",
-      date: Date.parse("5th May 2015"),
+      date: Date.parse("5th May 2019"),
       cost: 20.00,
       time: "7pm"
     },
