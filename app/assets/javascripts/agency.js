@@ -9,15 +9,24 @@ $(function() {
 
   if(!($(window).width() < 560))
   {
-    //----------------------------------------------------------------------------------------------//
-    //                          Setting the Variables (caching)                                     //
-    //----------------------------------------------------------------------------------------------//
+    //-------------------------------------------------------------------------------------------//
+    //                          Setting the Variables (caching)                                  //
+    //-------------------------------------------------------------------------------------------//
 
+    headersection = $('#header');
     section0 = $('#section0');
     section1 = $('#section1');
     section2 = $('#section2');
     section3 = $('#section3');
     section4 = $('#section4');
+
+    //Calculating the windows height//
+    var viewport_width = window.innerWidth;
+    var viewport_height = window.innerHeight;
+
+    //-------------------------------------------------------------------------------------------//
+    //                                   Initialising fullpage                                   //
+    //-------------------------------------------------------------------------------------------//
 
     $('#fullpage').fullpage(
     {
@@ -50,16 +59,9 @@ $(function() {
       sectionSelector: 'section',
       // slideSelector: '.slide',
 
-      // //events
-      // onLeave: function(index, nextIndex, direction){},
-      // afterLoad: function(anchorLink, index){},
-      // afterRender: function(){},
-      // afterResize: function(){},
-      // afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
-      // onSlideLeave: function(anchorLink, index, slideIndex, direction){}
-
-
-      //events
+      //----------------------------------------------------------------------------------------//
+      //                                   Handling Events                                      //
+      //----------------------------------------------------------------------------------------//
       onLeave: function(index, nextIndex, direction)
       {
         //initialise header variable
@@ -81,14 +83,17 @@ $(function() {
       afterRender: function()
       {
         //After rendering all the page, animate in the logo//
-        $('.center').delay(500).velocity('transition.slideDownIn', {stagger: 100, drag:true});
+        headersection.find('.hideme').delay(500).velocity('transition.slideDownIn');
+
+        // Input in inline css necessary for events to appear as they are//
+        section3.find('.addheight').css('height', (viewport_height-130) );
       },
 
       afterLoad: function(anchorLink, index)
       {
-        //----------------------------------------------------------------------------------------------//
-        //                          Using Velocity For Animations                                       //
-        //----------------------------------------------------------------------------------------------//
+        //----------------------------------------------------------------------------------------//
+        //                          Using Velocity For Animations                                 //
+        //----------------------------------------------------------------------------------------//
 
         //Who we are section
         if(index == '2' && section0.find('.hideme').is(':hidden'))
@@ -115,20 +120,20 @@ $(function() {
         }
 
       }
+      // Additional events handlers not used
+        // afterResize: function(){},
+        // afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
+        // onSlideLeave: function(anchorLink, index, slideIndex, direction){}
 
     });
   }
-
-
-
-
-
-
-
 });
 
 
-// Highlight the top nav as scrolling occurs
+//----------------------------------------------------------------------------------------//
+//                        Highlight top nav as scrolling occurs                           //
+//----------------------------------------------------------------------------------------//
+
 $('body').scrollspy({
     target: '.navbar-fixed-top'
 });

@@ -74,20 +74,18 @@ section#section2
 
 /! Events Section
 section#section3.bg-light-gray
-  .container
-    .row
-      .col-lg-8
-        .vheight.hideme
-          = render partial: 'events/upcoming', locals:  {upcoming_events: Events.upcoming }
+  .container.addheight
+    .row.vheight
+      .col-lg-8.hideme
+        = render partial: 'events/upcoming', locals:  {upcoming_events: Events.upcoming.order(:date).take(3) }
       .col-lg-4
         h2.section-heading.hideme Upcoming Events
 
-    .row
+    .row.vheight
       .col-lg-4
         h2.section-heading.hideme Past Events
 
-      .col-lg-8
-        .vheight.hideme
+      .col-lg-8.vheight.hideme
           = render partial: 'events/past', locals: { past_events: Events.past }
 
 
